@@ -17,7 +17,7 @@ class GroupController extends Controller
 	public function index()
 	{
 		$groups = Group::get();
-		return $groups;
+		return response()->json($groups);
 	}
 
 	/**
