@@ -68,7 +68,7 @@ class TopicController extends Controller
 	public function show(string $id)
 	{
 		$topic = Topic::where('url', $id)->first();
-		$posts = Post::where('topic_id', $topic->id)->with('user', 'reply_to.user')->get();
+		$posts = Post::where('topic_id', $topic->id)->with('user', 'reply_to.user', 'likes','likes.user')->get();
 		return response()->json(['status' => true, 'topic' => $topic, 'posts' => $posts]);
 	}
 

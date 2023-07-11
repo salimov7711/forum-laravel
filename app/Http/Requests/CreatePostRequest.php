@@ -26,15 +26,14 @@ class CreatePostRequest extends FormRequest
 			'content' => ['required', 'string'],
 			'user_id' => ['required', 'numeric'],
 			'topic_id' => ['required', 'numeric'],
+			'post_id' => ['numeric', 'nullable']
 		];
 	}
 
 	public function messages(): array
 	{
 		return [
-
 			'title.min' => 'Коичество символов не должно быть ,больше :max'
-
 		];
 	}
 }
